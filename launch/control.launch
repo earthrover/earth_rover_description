@@ -1,0 +1,9 @@
+<launch>
+
+	<rosparam file="$(find agribot)/config/control.yaml" command="load" />
+
+	<!-- load the controllers -->
+	<node name="controller_spawner" pkg="controller_manager" type="spawner"
+		args="ankle_fl_position_controller ankle_fr_position_controller ankle_bl_position_controller ankle_br_position_controller wheel_fl_velocity_controller wheel_fr_velocity_controller wheel_bl_velocity_controller wheel_br_velocity_controller joint_state_controller" />
+
+</launch>
