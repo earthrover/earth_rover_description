@@ -2,7 +2,7 @@
 	<arg name="gui" default="false" />
 	<arg name="rvizconfig" default="$(find urdf_tutorial)/urdf.rviz" />
 
-	<include file="$(find agribot)/launch/description.launch" />
+	<include file="$(find earth_rover_description)/launch/description.launch" />
 
 	<param name="use_gui" value="$(arg gui)" />
 	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />

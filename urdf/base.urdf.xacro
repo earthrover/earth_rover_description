@@ -21,7 +21,7 @@
 			<visual>
 				<origin rpy="0 0 ${M_PI if reflect == -1 else 0}" />
 				<geometry>
-					<mesh filename="package://agribot/meshes/base_block.dae" />
+					<mesh filename="package://earth_rover_description/meshes/base_block.dae" />
 				</geometry>
 				<material name="${colour}" />
 			</visual>

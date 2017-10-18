@@ -16,5 +16,5 @@
 		<arg name="headless" value="$(arg headless)"/>
 	</include>
 
-	<include file="$(find agribot)/launch/gazebo_spawn.launch" />
+	<include file="$(find earth_rover_description)/launch/gazebo_spawn.launch" />
 </launch>

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(agribot)
+project(earth_rover_description)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -22,7 +22,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES agribot
+#  LIBRARIES ${PROJECT_NAME}
 #  CATKIN_DEPENDS robot_state_publisher roslaunch urdf xacro
 #  DEPENDS system_lib
 )
@@ -57,7 +57,7 @@ install(DIRECTORY config launch meshes urdf
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_agribot.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_earth_rover_description.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()

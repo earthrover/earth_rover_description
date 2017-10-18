@@ -30,7 +30,7 @@
 			<visual>
 				<origin xyz="0 ${reflect*wheel_offset_y} ${wheel_offset_z}" rpy="0 0 ${M_PI if reflect == -1 else 0}"/>
 				<geometry>
-					<mesh filename="package://agribot/meshes/steering_block.dae" />
+					<mesh filename="package://earth_rover_description/meshes/steering_block.dae" />
 				</geometry>
 				<material name="silver"/>
 			</visual>
@@ -58,7 +58,7 @@
 					<origin rpy="0 0 ${M_PI}" />
 				</xacro:if>
 				<geometry>
-					<mesh filename="package://agribot/meshes/wheel.dae" />
+					<mesh filename="package://earth_rover_description/meshes/wheel.dae" />
 				</geometry>
 				<material name="black" />
 			</visual>

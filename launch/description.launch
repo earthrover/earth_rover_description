@@ -1,5 +1,5 @@
 <launch>
-	<param name="robot_description" command="xacro $(find agribot)/urdf/agribot.urdf.xacro"/>
+	<param name="robot_description" command="xacro $(find earth_rover_description)/urdf/earth_rover.urdf.xacro"/>
 
 	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 </launch>
