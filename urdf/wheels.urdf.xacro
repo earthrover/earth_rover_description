@@ -74,31 +74,37 @@
 			<material>Gazebo/DarkGrey</material>
 		</gazebo>
 
-		<joint name="${name}_ankle_joint" type="revolute">
-			<parent link="${parent}" />
-			<child link="${name}_ankle" />
-			<axis xyz="0 0 1" />
-			<origin xyz="${reflect_y*ankle_offset_x} ${reflect*ankle_offset_y} -${ankle_offset_z}" />
-			<limit lower="-${angle_limit_ccw}" upper="${angle_limit_cw}" effort="7" velocity="15" /> <!-- guesses -->
-		</joint>
+		<!-- Steering with transmissions for gazebo -->
+    <joint name="${name}_steering_joint" type="revolute">
+      <parent link="${parent}" />
+      <child link="${name}_ankle" />
+      <axis xyz="0 0 1" />
+      <origin xyz="${reflect_y*ankle_offset_x} ${reflect*ankle_offset_y} -${ankle_offset_z}" />
+      <limit lower="-${angle_limit_ccw}" upper="${angle_limit_cw}" effort="7" velocity="15" />
+      <!-- guesses -->
+    </joint>
 
-		<joint name="${name}_wheel_joint" type="continuous">
-			<parent link="${name}_ankle" />
-			<child link="${name}_wheel" />
-			<axis xyz="0 1 0" />
-			<origin xyz="0 ${reflect*wheel_offset_y} ${wheel_offset_z}" />
-		</joint>
-
-		<!-- transmissions needed for gazebo -->
-		<transmission name="${name}_ankle_transmission" type="SimpleTransmission">
+    <transmission name="${name}_steering_trans" type="SimpleTransmission">
 			<type>transmission_interface/SimpleTransmission</type>
-			<actuator name="${name}_ankle_motor" />
-			<joint name="${name}_ankle_joint">
-				<hardwareInterface>EffortJointInterface</hardwareInterface>
+      <actuator name="${name}_steering_motor">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+			<joint name="${name}_steering_joint">
+				<hardwareInterface>PositionJointInterface</hardwareInterface>
 			</joint>
 		</transmission>
 
-		<transmission name="${name}_wheel_transmission" type="SimpleTransmission">
+    <!-- Power wheels -->
+
+    <joint name="${name}_wheel_joint" type="continuous">
+      <parent link="${name}_ankle" />
+      <child link="${name}_wheel" />
+      <axis xyz="0 1 0" />
+      <origin xyz="0 ${reflect*wheel_offset_y} ${wheel_offset_z}" />
+    </joint>
+
+    <transmission name="${name}_wheel_transmission" type="SimpleTransmission">
 			<type>transmission_interface/SimpleTransmission</type>
 			<actuator name="${name}_wheel_motor" />
 			<joint name="${name}_wheel_joint">

@@ -24,10 +24,10 @@
 		<color rgba=".8 .8 .8 1" />
 	</material>
 
-	<xacro:include filename="base.urdf.xacro" />
-	<xacro:include filename="wheels.urdf.xacro" />
+  <xacro:include filename="base.urdf.xacro" />
+  <xacro:include filename="wheels.urdf.xacro" />
 
-	<!-- link of convenience, makes things more symmetrical -->
+  <!-- link of convenience, makes things more symmetrical -->
 	<link name="base_link"/>
 
 	<!-- gazebo doesn't recognise links without mass, but KDL doesn't
