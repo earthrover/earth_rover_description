@@ -91,7 +91,7 @@
         <mechanicalReduction>1</mechanicalReduction>
       </actuator>
 			<joint name="${name}_steering_joint">
-				<hardwareInterface>PositionJointInterface</hardwareInterface>
+				<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
 			</joint>
 		</transmission>
 
@@ -108,7 +108,7 @@
 			<type>transmission_interface/SimpleTransmission</type>
 			<actuator name="${name}_wheel_motor" />
 			<joint name="${name}_wheel_joint">
-				<hardwareInterface>VelocityJointInterface</hardwareInterface>
+				<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
 			</joint>
 		</transmission>
 
