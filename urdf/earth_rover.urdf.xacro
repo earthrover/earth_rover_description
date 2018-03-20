@@ -31,12 +31,12 @@
 	<link name="base_link"/>
 
 	<!-- gazebo doesn't recognise links without mass, but KDL doesn't
-	     like the base link to have inertia, so we have this silly
+	     like the ba link to have inertia, so we have this silly
 	     situation of a dummy inertia link for a dummy link... -->
 	<link name="base_link_inertia">
 		<inertial>
 			<!-- mass needed for gazebo to recognise link -->
-			<mass value="0.001" />
+			<mass value="1000.00" />
 			<inertia ixx="1" iyy="1" izz="1" ixy="0" ixz="0" iyz="0" />
 		</inertial>
 	</link>
